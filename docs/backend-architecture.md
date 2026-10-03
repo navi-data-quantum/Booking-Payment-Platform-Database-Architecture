@@ -1,8 +1,22 @@
-# Backend Architecture
+# Booking & Payment Platform Database Architecture
+
+Production-oriented PostgreSQL database architecture for a booking and payment platform, covering relational modeling, financial data, backend domains, indexing, security, and scalable design.
+
+## Overview
+
+This project demonstrates how PostgreSQL can serve as the relational data layer behind a production-oriented TypeScript/Node.js backend.
+
+The architecture covers multiple application domains, including users, organizations, services, bookings, billing, wallets, payouts, subscriptions, security, social features, and communication.
+
+The design focuses on maintainability, data integrity, scalability, and clear separation of responsibilities.
+
+---
+
+## Backend Architecture
 
 Production-oriented TypeScript/Node.js backend organized into domain-focused modules and infrastructure layers.
 
-## Architecture Structure
+### Architecture Structure
 
 ```text
 src/
@@ -30,38 +44,136 @@ src/
 ├── workers/
 ├── websocket/
 └── config/
-Architectural Layers
-API Layer
+```
+
+### Architectural Layers
+
+**API Layer**
 
 Routes and controllers handle HTTP requests and responses.
 
-Business Layer
+**Business Layer**
 
 Services contain application and business logic.
 
-Data Layer
+**Data Layer**
 
 Models and repositories provide structured access to PostgreSQL data.
 
-Infrastructure Layer
+**Infrastructure Layer**
 
 Billing providers, queues, workers, Redis, WebSocket components, and background jobs support asynchronous and real-time operations.
 
-Main Domains
-Authentication and security
-Organizations and branches
-Services and availability
-Booking and scheduling
-Billing and payments
-Wallets and financial records
-Payouts
-Subscriptions
-Social features
-Communication
-Design Goals
-Clear separation of responsibilities
-Maintainable domain boundaries
-Transaction-safe financial workflows
-Scalable background processing
-Secure API architecture
-Reliable relational data access
+---
+
+## Database Architecture
+
+PostgreSQL is used as the relational data layer supporting the main application domains.
+
+The database architecture is designed to work alongside domain-focused backend models, repositories, and business services.
+
+### Main Database Domains
+
+- Users and authentication
+- Organizations and branches
+- Services and availability
+- Bookings and scheduling
+- Payments and billing
+- Wallets and financial records
+- Payouts
+- Subscriptions
+- Social features
+- Communication
+
+---
+
+## Database Design Principles
+
+- Primary and foreign key relationships
+- UUID-based identifiers
+- Normalized relational structures
+- Referential integrity
+- Constraints and validation
+- Strategic indexing
+- Transaction-safe financial operations
+- Role and permission architecture
+- Row-Level Security where required
+- Separation of models, repositories, and business services
+
+---
+
+## Financial Architecture
+
+The financial layer is designed around transactional consistency and separation of responsibilities.
+
+It includes:
+
+- Payment processing
+- Wallet operations
+- Financial ledger records
+- Creator earnings
+- Payout processing
+- Subscription billing
+- Multi-currency support
+- Reconciliation workflows
+
+Financial operations are designed with data integrity and transaction safety as primary considerations.
+
+---
+
+## Security Architecture
+
+Security-related backend components support application-level authentication, authorization, sessions, devices, permissions, validation, rate limiting, and protected financial workflows.
+
+The database layer can additionally apply appropriate constraints, permissions, and Row-Level Security policies where required by the application.
+
+---
+
+## Scalability & Reliability
+
+The architecture is designed to support:
+
+- Background job processing
+- Queue-based workflows
+- Redis-backed infrastructure
+- WebSocket communication
+- Scheduled maintenance jobs
+- Transaction-safe financial operations
+- Strategic database indexing
+- Separation of application and data responsibilities
+
+---
+
+## Technology Stack
+
+- TypeScript
+- Node.js
+- Express
+- PostgreSQL
+- Redis
+- WebSocket
+- Background Jobs
+- Queue-based Processing
+- SQL
+- Relational Database Design
+
+---
+
+## Architecture Evidence
+
+This portfolio case study is documented through visual and technical evidence covering:
+
+1. Backend architecture
+2. Database architecture
+3. Relational data modeling
+4. PostgreSQL implementation
+5. Financial system architecture
+6. Security and scalability considerations
+
+---
+
+## Portfolio Note
+
+This case study presents a sanitized architecture based on real-world backend development experience.
+
+Production source code, credentials, private schemas, customer data, and sensitive business logic are not included.
